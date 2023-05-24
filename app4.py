@@ -20,7 +20,7 @@ def main():
     #petal_length 컬럼을 정렬하고 싶다.
     #오름차순정렬, 내림차순 정렬 두가지 옵션 선택하도록
     status =st.radio('정렬을 선택하세요',['오름차순', '내림차순'])
-    print(status)
+    
     if status == '오름차순':
         st.dataframe(df.sort_values('petal_length', ascending=True))
     elif status == '내림차순':
@@ -43,6 +43,18 @@ def main():
         st.text('렘파드')
     elif selected_lang == 'PHP':
         st.text('몰라')
+    # 데이터 프레임의 컬럼이름을 보여주고, 유저가 컬럼을 선택하면
+    # 해당컬럼만 가져와서 데이터프레임을 보여주고 싶다.
+    column_list =st.multiselect('컬럼을 선택하세요', df.columns)
+    
+    # 선택한 컬럼으로 데이터 프레임 보여주기
+    st.dataframe(df[column_list])
+    age =st.slider('나이',10, 110, step = 1,value = 50) # (타이틀, min, max)
+    st.text('나이는'+str(age)+'입니다.')
+    with st.expander('hello'):   # expander를 누르면 텍스트가 나오게 한다
+        st.text('안녕하세요') 
+
+    
     
 
 
