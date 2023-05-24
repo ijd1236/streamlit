@@ -10,6 +10,7 @@ def main():
     st.image(img, use_column_width=True) # use_column_width=True 화면 꽉차게
     # 이미지 URL 로 불러와서 보여주기
     st.image('https://cdn.epnc.co.kr/news/photo/201907/91021_81259_3048.jpg')
+    st.image('https://cdn.epnc.co.kr/news/photo/201907/91021_81259_3048.jpg')
     video_file=open('data/video1.mp4', 'rb') # 'rb' 동영상 읽어올때 사용
     st.video(video_file)
     

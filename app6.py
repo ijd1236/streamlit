@@ -27,7 +27,7 @@ def main():  #화면에 나타낼것
     # 색 입력
     color = st.color_picker('색을 선택하세요')
     st.text(color)
-    
+
 
 
 if __name__ == '__main__':
