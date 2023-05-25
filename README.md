@@ -10,9 +10,11 @@
 
 ## 앱 대시보드 설정을 위한 기본적인 코드
 - 기본적인 환경설정 후 conda activate app_dash로 가상환경에 들어갑니다.
+- 
 ![image](https://github.com/ijd1236/streamlit/assets/130967884/e62bff4c-d109-4549-9045-8b241a9b680e)
 
 - 사용하고 있는 파이썬 버젼 체크
+- 
 ![image](https://github.com/ijd1236/streamlit/assets/130967884/eb3925e5-3891-4797-8929-41ab45d62936)
 
 - 터미널 변경 이후 코드를 입력합니다.
