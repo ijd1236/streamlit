@@ -1,5 +1,6 @@
 # streamlit으로 앱 대시보드 만들기
 - Streamlit은 Python을 사용하여 데이터 분석 및 웹 애플리케이션 개발을 위한 오픈 소스 라이브러리입니다.
+- vs코드를 이용하여 만듭니다.
 ## 기본적인 환경 설정
 - conda create -n app_dash python=3.9 openssl numpy scipy matplotlib ipython scikit-learn pandas pillow jupyter seaborn
 - 가상환경을 만들고 대시보드에 필요한 각종 라이브러리를 설치합니다.
@@ -33,4 +34,5 @@ if __name__ == '__main__':
 ![image](https://github.com/ijd1236/streamlit/assets/130967884/dbf741f0-2885-4e4c-b0ae-733d849c29d4)
 
 - 내 앱 대쉬보드가 만들어졌습니다.
+- Local URL: http://localhost:8501 뒤의 8501는 port 입니다
 
