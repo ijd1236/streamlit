@@ -12,9 +12,9 @@ def main():
     # 소문자 버튼을 누르면, 소문자로 나오게 하자
     # st.button('대문자')
     # st.button('소문자')
-    if st.button('대문자') :
-        st.text(name.lower())
     if st.button('소문자') :
+        st.text(name.lower())
+    if st.button('대문자') :
         st.text(name.upper())
     # st.dataframe(df)
     #petal_length 컬럼을 정렬하고 싶다.
