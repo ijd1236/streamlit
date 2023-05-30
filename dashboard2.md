@@ -82,25 +82,45 @@ def main():
         
 - 해당 버튼을 누를 시 name 변수에 저장된 문자 Mike를 변환하여 소문자, 대문자가 출력된다     
   ![image](https://github.com/ijd1236/streamlit/assets/130967884/690f2dc2-74b1-42d3-90db-05fd084978ca)
-      
+ 
+ ### radio 활용
+ 
 ```python
-    # st.dataframe(df)
     #petal_length 컬럼을 정렬하고 싶다.
     #오름차순정렬, 내림차순 정렬 두가지 옵션 선택하도록
     status =st.radio('정렬을 선택하세요',['오름차순', '내림차순'])
     
+    # if문을 사용하여 오름차순, 내림차순을 각각 클릭시 해당 데이터 프레임을 보이게 합니다
+    
     if status == '오름차순':
-        st.dataframe(df.sort_values('petal_length', ascending=True))
+        st.dataframe(df.sort_values('petal_length', ascending=True))  #petal_length열 기준으로 오름차순 정렬
     elif status == '내림차순':
-        st.dataframe(df.sort_values('petal_length', ascending=False))
+        st.dataframe(df.sort_values('petal_length', ascending=False)) #petal_length열 기준으로 내림차순 정렬
+        
+```
+- 버튼을 누를 시 해당 데이터 프레임을 출력합니다.
+
+![image](https://github.com/ijd1236/streamlit/assets/130967884/c24f0b2a-a47e-43fc-a323-fd07279db1b6)
+
+### checkbox 활용
+
+```
+
     if st.checkbox('데이터프레임 보이기'):
         st.dataframe(df.head(3))
     else:
         st.write('데이터가 없습니다')
-```
- 
+ ```
 
-    # 여러개 중에 1개를 선택
+- 체크박스를 누를시 head(3) 3행의 데이터 프레임을 출력하게 합니다.
+![image](https://github.com/ijd1236/streamlit/assets/130967884/2a4f35ef-cc3d-4083-9a57-ed918286a181)
+
+
+  
+### selectbox 활용
+```python
+    # 여러개의 항목중 1개를 선택하고 싶을때 사용합니다
+    # if 문을 사용하여 각 박스를 선택시 출력할 내용을 입력합니다.
     language= ['Python', 'Java', 'C', 'Go', 'PHP']
     selected_lang = st.selectbox('선호하는 언어를 선택!', language)
     if selected_lang == 'Python':
@@ -113,17 +133,40 @@ def main():
         st.text('렘파드')
     elif selected_lang == 'PHP':
         st.text('몰라')
+```
+![image](https://github.com/ijd1236/streamlit/assets/130967884/be8e9003-ce0f-409d-af89-d8209ddd5bde)
+
+### multiselect 활용
+
+```python
     # 데이터 프레임의 컬럼이름을 보여주고, 유저가 컬럼을 선택하면
     # 해당컬럼만 가져와서 데이터프레임을 보여주고 싶다.
-    column_list =st.multiselect('컬럼을 선택하세요', df.columns)
-    
+    column_list =st.multiselect('컬럼을 선택하세요', df.columns) # 데이터 프레임의 열들을 박스 항목에 넣습니다 
     # 선택한 컬럼으로 데이터 프레임 보여주기
-    st.dataframe(df[column_list])
+    st.dataframe(df[column_list]) # 셀렉박스에서 선택한 열의 데이터를 출력하게 합니다.
+```
+![image](https://github.com/ijd1236/streamlit/assets/130967884/77dccfc5-880f-4eab-9a90-2a565131e227)
+
+
+### slider 활용
+
+```python
     age =st.slider('나이',10, 110, step = 1,value = 50) # (타이틀, min, max)
     st.text('나이는'+str(age)+'입니다.')
+```
+- 이런식으로 slider를 지정할때마다 해당 숫자와 텍스트가 입력됩니다.
+
+![image](https://github.com/ijd1236/streamlit/assets/130967884/811101a5-f3b5-49c6-8f3e-d87e8262802d)
+    
+ ### expander 활용
+ 
     with st.expander('hello'):   # expander를 누르면 텍스트가 나오게 한다
         st.text('안녕하세요') 
 ```
+- 아래로 접었다 펴지는 expander를 만듭니다.
+
+![image](https://github.com/ijd1236/streamlit/assets/130967884/078fe0e4-1527-4a56-85f9-94e9b115de17)
+
 
 
 
